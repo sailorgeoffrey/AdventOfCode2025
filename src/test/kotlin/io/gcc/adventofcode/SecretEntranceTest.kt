@@ -7,13 +7,24 @@ import java.io.File
 
 class SecretEntranceTest {
 
+    val instructions = File("src/test/resources/secret-entrance-test-instructions.txt").readLines()
+
     @Test
-    fun testSolveFromFile() {
-        val answer = SecretEntrance().solveFromFile(
+    fun testSolvePartOneFromFile() {
+        val answer = SecretEntrance().solvePartOne(
             initValue = 50,
-            File("src/test/resources/secret-entrance-test-instructions.txt")
+            instructions
         )
         assertEquals(3, answer)
+    }
+
+    @Test
+    fun testSolvePartTwoFromFile() {
+        val answer = SecretEntrance().solvePartTwo(
+            initValue = 50,
+            instructions
+        )
+        assertEquals(6, answer)
     }
 
 }

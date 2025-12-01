@@ -1,16 +1,19 @@
 package .io.gcc.adventofcode
 
-import java.io.File
-
 class SecretEntrance {
     class Dial(private var value: Int) {
-        var counter = 0
+        var zeroEndCounter: Int = 0
+        var zeroPassCount: Int = 0
+            private set
 
         fun right(delta: Int) {
+            zeroPassCount += (value + delta) / 100
             value = ((value + delta) % 100 + 100) % 100
         }
 
         fun left(delta: Int) {
+            val effectiveValue = if (value == 0) 100 else value
+            zeroPassCount += (delta + (100 - effectiveValue)) / 100
             value = ((value - delta) % 100 + 100) % 100
         }
 
@@ -22,17 +25,20 @@ class SecretEntrance {
                     'L' -> this.left(delta)
                     else -> throw IllegalArgumentException("Invalid instruction: $i")
                 }
-                if (value == 0) counter++
+                if (value == 0) zeroEndCounter++
             }
         }
-
-        fun getValue(): Int = value
     }
 
-    fun solveFromFile(initValue: Int, file: File): Int {
+    fun solvePartOne(initValue: Int, instructions: List<String>): Int {
         val dial = Dial(initValue)
-        dial.apply(file.readLines())
-        return dial.counter
+        dial.apply(instructions)
+        return dial.zeroEndCounter
     }
 
+    fun solvePartTwo(initValue: Int, instructions: List<String>): Int {
+        val dial = Dial(initValue)
+        dial.apply(instructions)
+        return dial.zeroPassCount
+    }
 }
