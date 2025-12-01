@@ -9,15 +9,18 @@ class SecretEntranceTest {
     val instructions = File("src/test/resources/secret-entrance-test-instructions.txt").readLines()
 
     @Test
-    fun testSolvePartOneFromFile() {
-        val answer = SecretEntrance(50).apply(instructions)
-        assertEquals(3, answer.zeroEndCount)
+    fun testSolvePartOne() {
+        assertEquals(
+            3,
+            SecretEntrance(50).apply(instructions).zeroEndCount
+        )
     }
 
     @Test
-    fun testSolvePartTwoFromFile() {
-        val answer = SecretEntrance(50).apply(instructions)
-        assertEquals(6, answer.zeroPassCount)
+    fun testSolvePartTwo() {
+        assertEquals(
+            6,
+            SecretEntrance(50).apply(instructions).zeroPassCount
+        )
     }
-
 }

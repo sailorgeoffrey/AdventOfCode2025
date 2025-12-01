@@ -7,18 +7,23 @@ import java.io.File
  * https://adventofcode.com/2025/day/1
  */
 class SecretEntrance(private var value: Int) {
+
+    private companion object {
+        const val DIAL_SIZE = 100
+    }
+
     var zeroEndCount: Int = 0
     var zeroPassCount: Int = 0
 
     fun right(delta: Int) {
-        zeroPassCount += (value + delta) / 100
-        value = ((value + delta) % 100 + 100) % 100
+        zeroPassCount += (value + delta) / DIAL_SIZE
+        value = Math.floorMod(value + delta, DIAL_SIZE)
     }
 
     fun left(delta: Int) {
-        val effectiveValue = if (value == 0) 100 else value
-        zeroPassCount += (delta + (100 - effectiveValue)) / 100
-        value = ((value - delta) % 100 + 100) % 100
+        val effectiveValue = if (value == 0) DIAL_SIZE else value
+        zeroPassCount += (delta + (DIAL_SIZE - effectiveValue)) / DIAL_SIZE
+        value = Math.floorMod(value - delta, DIAL_SIZE)
     }
 
     fun apply(instructions: List<String>): SecretEntrance {
