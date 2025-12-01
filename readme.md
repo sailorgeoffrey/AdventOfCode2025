@@ -1,8 +1,7 @@
 # Advent of Code 2025
 These are my solutions to the yearly puzzles.  Comments and reviews are welcome!
 
-[!WARNING]
-Contains Spoilers!
+⚠️ Contains Spoilers ⚠️
 
 https://adventofcode.com
 
