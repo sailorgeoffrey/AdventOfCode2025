@@ -10,7 +10,6 @@ class SecretEntrance {
     class Dial(private var value: Int) {
         var zeroEndCounter: Int = 0
         var zeroPassCount: Int = 0
-            private set
 
         fun right(delta: Int) {
             zeroPassCount += (value + delta) / 100
