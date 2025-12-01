@@ -10,20 +10,14 @@ class SecretEntranceTest {
 
     @Test
     fun testSolvePartOneFromFile() {
-        val answer = SecretEntrance().solvePartOne(
-            initValue = 50,
-            instructions
-        )
-        assertEquals(3, answer)
+        val answer = SecretEntrance(50).apply(instructions)
+        assertEquals(3, answer.zeroEndCount)
     }
 
     @Test
     fun testSolvePartTwoFromFile() {
-        val answer = SecretEntrance().solvePartTwo(
-            initValue = 50,
-            instructions
-        )
-        assertEquals(6, answer)
+        val answer = SecretEntrance(50).apply(instructions)
+        assertEquals(6, answer.zeroPassCount)
     }
 
 }
