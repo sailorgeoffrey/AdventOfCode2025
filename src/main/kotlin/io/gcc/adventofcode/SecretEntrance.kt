@@ -1,5 +1,11 @@
 package io.gcc.adventofcode
 
+import java.io.File
+
+/**
+ * 1 December: Secret Entrance
+ * https://adventofcode.com/2025/day/1
+ */
 class SecretEntrance {
     class Dial(private var value: Int) {
         var zeroEndCounter: Int = 0
@@ -41,4 +47,23 @@ class SecretEntrance {
         dial.apply(instructions)
         return dial.zeroPassCount
     }
+}
+
+fun main() {
+
+    val entrance = SecretEntrance()
+    val instructions = File("src/main/resources/secret-entrance-instructions.txt").readLines()
+
+    val partOneAnswer = entrance.solvePartOne(
+        initValue = 50,
+        instructions = instructions
+    )
+    println("The code for part 1 is $partOneAnswer")
+
+    val partTwoAnswer = entrance.solvePartTwo(
+        initValue = 50,
+        instructions = instructions
+    )
+    println("The code for part 2 is $partTwoAnswer")
+
 }
