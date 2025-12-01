@@ -1,4 +1,4 @@
-package .io.gcc.adventofcode
+package io.gcc.adventofcode
 
 class SecretEntrance {
     class Dial(private var value: Int) {

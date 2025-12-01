@@ -1,6 +1,5 @@
 package io.gcc.adventofcode
 
-import .io.gcc.adventofcode.SecretEntrance
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.io.File

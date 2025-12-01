@@ -1,4 +1,4 @@
-package .io.gcc.adventofcode
+package io.gcc.adventofcode
 
 import java.io.File
 
