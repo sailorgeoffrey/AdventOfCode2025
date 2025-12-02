@@ -17,22 +17,18 @@ class GiftShopTest {
     }
 
     @Test
-    fun testInvalidByRepeats() {
-        assertTrue(GiftShop.invalidByRepeats(11))
-        assertTrue(GiftShop.invalidByRepeats(55))
-        assertTrue(GiftShop.invalidByRepeats(6464))
-        assertTrue(GiftShop.invalidByRepeats(123123))
-        assertFalse(GiftShop.invalidByRepeats(12))
-        assertFalse(GiftShop.invalidByRepeats(101))
-    }
-
-    @Test
-    fun testInvalidBySequence() {
-        assertTrue(GiftShop.invalidBySequence(12341234))
-        assertFalse(GiftShop.invalidBySequence(12))
-        assertTrue(GiftShop.invalidBySequence(123123123))
-        assertTrue(GiftShop.invalidBySequence(1212121212))
-        assertTrue(GiftShop.invalidBySequence(1111111))
+    fun testIsInvalid() {
+        assertTrue(GiftShop.isInvalid(11))
+        assertTrue(GiftShop.isInvalid(55))
+        assertTrue(GiftShop.isInvalid(6464))
+        assertTrue(GiftShop.isInvalid(123123))
+        assertFalse(GiftShop.isInvalid(12))
+        assertFalse(GiftShop.isInvalid(101))
+        assertTrue(GiftShop.isInvalid(12341234))
+        assertFalse(GiftShop.isInvalid(12))
+        assertTrue(GiftShop.isInvalid(123123123))
+        assertTrue(GiftShop.isInvalid(1212121212))
+        assertTrue(GiftShop.isInvalid(1111111))
     }
 
     @Test
