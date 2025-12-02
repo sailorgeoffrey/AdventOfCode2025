@@ -10,3 +10,4 @@ https://adventofcode.com
 | Day         | Solution                                                                 |
 |-------------|--------------------------------------------------------------------------|
 | 01 December | [Secret Entrance](src/main/kotlin/io/gcc/adventofcode/SecretEntrance.kt) |
+| 02 December | [Secret Entrance](src/main/kotlin/io/gcc/adventofcode/GiftShop.kt)       |
