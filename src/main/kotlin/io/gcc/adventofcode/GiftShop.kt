@@ -7,6 +7,7 @@ import java.io.File
  * https://adventofcode.com/2025/day/2
  */
 object GiftShop {
+
     fun invalidByRepeats(test: Long): Boolean {
         val str = test.toString()
         if (str.length % 2 == 1) return false
@@ -33,7 +34,6 @@ object GiftShop {
         .flatMap { range -> range.filter(function) }
 
     fun sumInvalid(input: String, function: (test: Long) -> Boolean): Long = filterForInvalid(input, function).sum()
-
 }
 
 fun main() {
