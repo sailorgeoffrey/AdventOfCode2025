@@ -11,3 +11,4 @@ https://adventofcode.com
 |-------------|--------------------------------------------------------------------------|
 | 01 December | [Secret Entrance](src/main/kotlin/io/gcc/adventofcode/SecretEntrance.kt) |
 | 02 December | [Gift Shop](src/main/kotlin/io/gcc/adventofcode/GiftShop.kt)             |
+| 03 December | [Lobby](src/main/kotlin/io/gcc/adventofcode/Lobby.kt)             |
