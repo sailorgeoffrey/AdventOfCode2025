@@ -18,7 +18,7 @@ object GiftShop {
     fun invalidBySequence(test: Long): Boolean {
         val str = test.toString()
         val length = str.length
-        val factors = (1..length).filter { length % it == 0 }.dropLast(1)
+        val factors = (1..<length).filter { length % it == 0 }
         for (factor in factors) {
             val parts = str.chunked(factor)
             if (parts.all { it == parts[0] }) return true
