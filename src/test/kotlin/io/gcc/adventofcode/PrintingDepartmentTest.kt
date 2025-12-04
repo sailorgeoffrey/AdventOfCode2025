@@ -40,9 +40,4 @@ class PrintingDepartmentTest {
         assertEquals(13, it.findAccessible().size)
     }
 
-    @Test
-    fun testIterate() {
-
-    }
-
 }
