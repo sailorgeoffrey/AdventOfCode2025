@@ -7,9 +7,9 @@ class PrintingDepartment(input: String) {
     val g = input.lines().let { l -> Array(l.size) { y -> Array(l[y].length) { l[y][it] == '@' } } }
 
     override fun toString() = g.joinToString("\n") { it.joinToString("") { if (it) "@" else "." } }
-    fun countAdjacent(y: Int, x: Int) =
-        (-1..1).sumOf { a -> (-1..1)
-            .count { b -> (a != 0 || b != 0) && y + a in g.indices && x + b in g[0].indices && g[y + a][x + b] } }
+    fun countAdjacent(y: Int, x: Int) = (-1..1).sumOf { a ->
+        (-1..1).count { b -> (a != 0 || b != 0) && y + a in g.indices && x + b in g[0].indices && g[y + a][x + b] }
+    }
 
     fun findAccessible() =
         g.indices.flatMap { y -> g[0].indices.filter { g[y][it] && countAdjacent(y, it) < 4 }.map { y to it } }
