@@ -16,3 +16,4 @@ problems, a speed contest, or to challenge each other." -- https://adventofcode.
 | 02 December | [Gift Shop](src/main/kotlin/io/gcc/adventofcode/GiftShop.kt)                     |
 | 03 December | [Lobby](src/main/kotlin/io/gcc/adventofcode/Lobby.kt)                            |
 | 04 December | [Printing Department](src/main/kotlin/io/gcc/adventofcode/PrintingDepartment.kt) |
+| 05 December | [Cafeteria](src/main/kotlin/io/gcc/adventofcode/Cafeteria.kt)                    |
