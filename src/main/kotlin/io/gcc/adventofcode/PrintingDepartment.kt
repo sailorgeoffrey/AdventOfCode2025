@@ -4,9 +4,9 @@ import java.io.File
 
 class PrintingDepartment(input: String) {
 
+    override fun toString() = g.joinToString("\n") { it.joinToString("") { if (it) "@" else "." } }
     val g = input.lines().let { l -> Array(l.size) { y -> Array(l[y].length) { l[y][it] == '@' } } }
 
-    override fun toString() = g.joinToString("\n") { it.joinToString("") { if (it) "@" else "." } }
     fun countAdjacent(y: Int, x: Int) = (-1..1).sumOf { a ->
         (-1..1).count { b -> (a != 0 || b != 0) && y + a in g.indices && x + b in g[0].indices && g[y + a][x + b] }
     }
@@ -20,6 +20,6 @@ class PrintingDepartment(input: String) {
 
 fun main() {
     val it = PrintingDepartment(File("src/main/resources/printing-department-input.txt").readText())
-    println("The total accessible rolls for part 1 is ${it.findAccessible().size}")
-    println("The total removed rolls for part 2 is ${it.removeRolls()}")
+    println("The accessible rolls for part 1 is ${it.findAccessible().size}")
+    println("The removed rolls for part 2 is ${it.removeRolls()}")
 }
